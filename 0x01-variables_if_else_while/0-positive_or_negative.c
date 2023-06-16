@@ -3,7 +3,11 @@
 #include <time.h>
 
 /**
- * main - Prints if number is positive, zero, or negative
+ * main - Entry point of the program
+ *
+ * Description: Generates a random number and prints whether it is positive,
+ *              zero, or negative.
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
@@ -13,7 +17,7 @@ int main(void)
     srand(time(0));
     n = rand() - RAND_MAX / 2;
 
-    printf("The number %d ", n);
+    printf("%d ", n);
 
     if (n > 0)
     {
@@ -30,4 +34,3 @@ int main(void)
 
     return 0;
 }
-
