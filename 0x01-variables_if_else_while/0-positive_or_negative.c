@@ -1,14 +1,13 @@
 #include <stdio.h>
+
 #include <stdlib.h>
+
 #include <time.h>
 
 /**
- * main - Entry point of the program
+ * main - Prints if number is positive, zero or negative
+ * Return: Always (Success)
  *
- * Description: Generates a random number and prints whether it is positive,
- *              zero, or negative.
- *
- * Return: Always 0 (Success)
  */
 int main(void)
 {
