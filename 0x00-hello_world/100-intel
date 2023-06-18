@@ -3,10 +3,10 @@
 # Get the C file name from the environment variable
 c_file="$CFILE"
 
-# Remove the extension from the C file name
+# Extract the file name without extension
 file_name="${c_file%.*}"
 
-# Set the output file name with the .s extension
+# Set the output file name with .s extension
 output_file="$file_name.s"
 
 # Generate the assembly code using GCC
@@ -18,4 +18,3 @@ if [ $? -eq 0 ]; then
 else
   echo "Failed to generate assembly code."
 fi
-
