@@ -1,20 +1,15 @@
 #!/bin/bash
 
-# Get the C file name from the environment variable
-c_file="$CFILE"
+# Get the C file name from the variable
+cfile="$CFILE"
 
-# Extract the file name without extension
-file_name="${c_file%.*}"
+# Extract the base name of the C file (without extension)
+base_name=$(basename "$cfile" .c)
 
-# Set the output file name with .s extension
-output_file="$file_name.s"
+# Set the output file name with the .s extension
+output_file="${base_name}.s"
 
 # Generate the assembly code using GCC
-gcc -S -masm=intel "$c_file" -o "$output_file"
+gcc -S -masm=intel "$cfile" -o "$output_file"
 
-# Check if the compilation was successful
-if [ $? -eq 0 ]; then
-  echo "Assembly code generated successfully. Output file: $output_file"
-else
-  echo "Failed to generate assembly code."
-fi
+echo "Assembly code generated for $cfile and saved in $output_file"
