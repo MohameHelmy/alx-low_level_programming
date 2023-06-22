@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - Entry point
+ *
+ * Description: Prints the characters using the _putchar function
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 _putchar('_');
