@@ -15,13 +15,13 @@ if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
 {
 if (month == 2 && day == 29)
 {
-printf("Date: %02d/%02d/%04d\n", month, day, year);
+printf("Date: %02d/%02d/%04d\n", month, day);
 printf("Day of the year: %d\n", day);
 printf("Remaining days: %d\n", 366 - day);
 }
 else if (month >= 3)
 {
-printf("Date: %02d/%02d/%04d\n", month, day, year);
+printf("Date: %02d/%02d/%04d\n", month, day);
 printf("Day of the year: %d\n", (month - 1) * 30 + day);
 printf("Remaining days: %d\n", 335 - (month - 1) * 30 - day);
 }
@@ -32,7 +32,7 @@ printf("Invalid date: %02d/%02d/%04d\n", month, day, year);
 }
 else
 {
-printf("Date: %02d/%02d/%04d\n", month, day, year);
+printf("Date: %02d/%02d/%04d\n", month, day);
 printf("Day of the year: %d\n", (month - 1) * 30 + day);
 printf("Remaining days: %d\n", 365 - (month - 1) * 30 - day);
 }
