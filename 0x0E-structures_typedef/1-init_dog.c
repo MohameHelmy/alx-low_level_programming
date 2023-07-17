@@ -17,6 +17,6 @@ if (d != NULL)
 {
 d->name = name;
 d->age = age;
-d->owned = owner;
+d->owner = owner;
 }
 }
