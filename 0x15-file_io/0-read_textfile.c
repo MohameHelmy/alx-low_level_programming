@@ -13,7 +13,7 @@ int fd;
 ssize_t bytes;
 char buf[READ_BUF_SIZE_ * 8];
 if (!filename || !letters)
-return(0);
+return (0);
 fd = open(filename, O_RDONLY);
 if (fd == -1)
 return (0);
