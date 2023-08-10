@@ -7,12 +7,12 @@ void print_osabi_more(Elf64_Ehdr h);
 *@h: the ELFheader struct
 */
 
-void print_magic(Elf64_Ehdr h);
+void print_magic(Elf64_Ehdr (h))
 {
 int i;
 printf(" magic: ");
-for (i = 0; i < EI_INDENT; i++)
-printf("%2.2x%s", h.e_indent[i], i == EI_NIDENT - 1 ? "\n" : " ");
+for (i = 0; i < EI_NINDENT; i++)
+printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT - 1 ? "\n" : " ");
 }
 
 /**
@@ -20,9 +20,9 @@ printf("%2.2x%s", h.e_indent[i], i == EI_NIDENT - 1 ? "\n" : " ");
 *@h: the ELFheader struct
 */
 
-void print_class(Elf64_Ehdr h);
+void print_class(Elf64_Ehdr (h))
 {
-printf(" Class:                        "
+printf(" Class:                        ")
 switch (h. e_ident[EI_CLASS])
 {
 case ELFCLASS64:
@@ -41,9 +41,9 @@ printf("\n");
 *print_data - prints ELF data
 *@h: the ELFheader struct
 */
-void print_data(Elf64_Ehdr h);
+void print_data(Elf64_Ehdr (h))
 {
-printf("  Data:                                       "
+printf("  Data:                                       ")
 switch (h. e_ident[EI_DATA])
 {
 case ELFDATA2MSB:
@@ -63,7 +63,7 @@ printf("\n");
 *print_version - prints ELF version
 *@h: the ELFheader struct
 */
-void print_version(Elf64_Ehdr h);
+void print_version(Elf64_Ehdr h)
 {
 printf("  Version:                        %d", h. e_ident[EI_VERSION]);
 switch (h. e_ident[EI_VERSION])
@@ -83,7 +83,7 @@ printf("\n");
 *print_osabi - prints ELF osabi
 *@h: the ELFheader struct
 */
-void print_osabi(Elf64_Ehdr h);
+void print_osabi(Elf64_Ehdr h)
 {
 printf("  OS/ABI:                           ");
 switch (h. e_ident[EI_OSABI])
@@ -150,7 +150,7 @@ printf("<unknown: %x", h. e_ident[Ei_osabi]);
 *@h: the ELFheader struct
 */
 
-void print_abiversion(Elf64_Ehdr h);
+void print_abiversion(Elf64_Ehdr h)
 {
 printf("  ABI Version:                       %d\n",
 h. e_ident[EI_ABIVERSION]);
@@ -159,7 +159,7 @@ h. e_ident[EI_ABIVERSION]);
 *print_type - prints ELF type
 *@h: the ELFheader struct
 */
-void print_type(Elf64_Ehdr h);
+void print_type(Elf64_Ehdr h)
 {
 char *p = (char *)&h. e_type;
 int i = 0;
@@ -193,7 +193,7 @@ printf("\n");
 *@h: the ELFheader struct
 */
 
-void print_entry(Elf64_Ehdr h);
+void print_entry(Elf64_Ehdr h)
 {
 int i = 0, len = 0;
 unsigned char *p = (unsigned char *)&h. e_entry;
